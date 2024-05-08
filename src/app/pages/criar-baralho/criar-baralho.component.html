@@ -1,12 +1,14 @@
 <div class="criar-baralho-container">
+  <div class="header-line">
   <input [(ngModel)]="deckName" placeholder="Nome do Baralho" type="text" class="deck-name-input">
-  
-  <div *ngIf="cardsInDeck.length > 0" class="deck-summary">
-    <h2>Cartas no Baralho: {{ deckName || 'Novo Baralho' }}</h2>
-    <div *ngFor="let card of cardsInDeck" class="summary-card">
-      <span>{{ card.name }} ({{ cardCount[card.name] }})</span>
-      <button (click)="removeCardFromDeck(card)">Remover</button>
+    <div *ngIf="cardsInDeck.length > 0" class="deck-summary">
+      <h2>Cartas no Baralho: {{ deckName || 'Novo Baralho' }}</h2>
+      <div *ngFor="let card of cardsInDeck" class="summary-card">
+        <span>{{ card.name }} ({{ cardCount[card.name] }})</span>
+        <button (click)="removeCardFromDeck(card)">Remover</button>
+      </div>
     </div>
+    <button (click)="saveDeck()" [disabled]="!canSaveDeck()">Salvar Baralho</button>
   </div>
 
   <div class="grid-container">
@@ -19,5 +21,4 @@
     </div>
   </div>
 
-  <button (click)="saveDeck()" [disabled]="!canSaveDeck()">Salvar Baralho</button>
 </div>
