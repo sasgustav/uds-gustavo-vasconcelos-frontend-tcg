@@ -20,10 +20,12 @@ export class CriarBaralhoComponent {
   }
 
   addCardToDeck(carta: Carta) {
+    console.log("Adicionando carta", carta.name);
     const count = this.cardCount[carta.name] || 0;
     if (count < 4) {
       this.cardsInDeck.push(carta);
       this.cardCount[carta.name] = count + 1;
+      console.log(`Carta adicionada. Total agora: ${this.cardCount[carta.name]} de ${carta.name}`);
     } else {
       alert('Não pode adicionar mais de 4 cartas com o mesmo nome.');
     }
@@ -42,19 +44,23 @@ export class CriarBaralhoComponent {
   }
 
   canSaveDeck(): boolean {
+    console.log(`Verificando possibilidade de salvar: ${this.cardsInDeck.length} cartas`);
     return this.cardsInDeck.length >= 24 && this.cardsInDeck.length <= 60;
   }
 
   saveDeck() {
+    console.log("Tentando salvar o baralho com o nome:", this.deckName);
     if (!this.deckName.trim()) {
       alert('Por favor, digite um nome para o baralho.');
       return;
     }
     if (this.canSaveDeck()) {
+      console.log("Salvando baralho:", this.deckName);
       localStorage.setItem(this.deckName, JSON.stringify({ cards: this.cardsInDeck, count: this.cardCount }));
       alert('Baralho salvo com sucesso!');
+      console.log("Baralho salvo e resetando dados.");
       this.resetDeck();
-      this.router.navigate(['/lista-de-baralhos']); // Adapte para a sua rota correta
+      this.router.navigate(['/ver-baralhos-criados']);
     } else {
       alert('O baralho deve ter entre 24 e 60 cartas.');
     }
@@ -63,6 +69,6 @@ export class CriarBaralhoComponent {
   resetDeck() {
     this.cardsInDeck = [];
     this.cardCount = {};
-    this.deckName = ''; 
+    this.deckName = '';
   }
 }
