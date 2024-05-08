@@ -5,11 +5,17 @@
   </div>
   <div *ngIf="cardsInDeck.length > 0" class="deck-summary">
     <h2>Cartas no Baralho: {{ deckName || 'Novo Baralho' }}</h2>
-    <div *ngFor="let card of cardsInDeck" class="summary-card">
-      <span>{{ card.name }} ({{ cardCount[card.name] }})</span>
-      <button (click)="removeCardFromDeck(card)">Remover</button>
+  
+    <app-spinner *ngIf="isLoadingDeck | async"></app-spinner>
+    
+    <div *ngIf="!(isLoadingDeck | async)">
+      <div *ngFor="let card of cardsInDeck" class="summary-card">
+        <span>{{ card.name }} ({{ cardCount[card.name] }})</span>
+        <button (click)="removeCardFromDeck(card)">Remover</button>
+      </div>
     </div>
   </div>
+  
   <div class="grid-container">
     <div *ngFor="let carta of (cartas | async)" class="card">
       <img [src]="carta.images.small" alt="{{ carta.name }}">

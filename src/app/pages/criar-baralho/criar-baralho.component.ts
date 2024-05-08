@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Carta } from 'src/app/models/carta.model';
 import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 import { Router } from '@angular/router';
@@ -9,14 +9,28 @@ import { Router } from '@angular/router';
   templateUrl: './criar-baralho.component.html',
   styleUrls: ['./criar-baralho.component.scss']
 })
-export class CriarBaralhoComponent {
+export class CriarBaralhoComponent implements OnInit {
   cartas: Observable<Carta[]>;
+  isLoadingDeck: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   deckName: string = '';
   cardsInDeck: Carta[] = [];
   cardCount: { [key: string]: number } = {};
 
   constructor(private pokemonTcgService: PokemonTcgService, private router: Router) {
     this.cartas = this.pokemonTcgService.getCartas();
+  }
+
+  ngOnInit() {
+    this.loadDeck();
+  }
+
+  loadDeck() {
+    this.isLoadingDeck.next(true);
+    // Simulando o carregamento do baralho
+    setTimeout(() => {
+      this.isLoadingDeck.next(false);
+      // Aqui você carregaria as cartas do baralho de algum serviço ou local storage
+    }, 2000); // Simulação de delay de carregamento
   }
 
   addCardToDeck(carta: Carta) {
