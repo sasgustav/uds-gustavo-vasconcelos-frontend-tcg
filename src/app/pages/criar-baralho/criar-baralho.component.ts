@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Carta } from 'src/app/models/carta.model';
 import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-criar-baralho',
@@ -14,7 +15,7 @@ export class CriarBaralhoComponent {
   cardsInDeck: Carta[] = [];
   cardCount: { [key: string]: number } = {};
 
-  constructor(private pokemonTcgService: PokemonTcgService) {
+  constructor(private pokemonTcgService: PokemonTcgService, private router: Router) {
     this.cartas = this.pokemonTcgService.getCartas(); // Assume que esta linha carrega as cartas para o grid
   }
 
@@ -53,6 +54,7 @@ export class CriarBaralhoComponent {
       localStorage.setItem(this.deckName, JSON.stringify({ cards: this.cardsInDeck, count: this.cardCount }));
       alert('Baralho salvo com sucesso!');
       this.resetDeck();
+      this.router.navigate(['/lista-de-baralhos']); // Adapte para a sua rota correta
     } else {
       alert('O baralho deve ter entre 24 e 60 cartas.');
     }
