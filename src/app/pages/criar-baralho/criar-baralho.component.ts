@@ -11,89 +11,81 @@ import { Router } from '@angular/router';
 })
 export class CriarBaralhoComponent implements OnInit {
   cartas: Observable<Carta[]>;
-  isLoadingDeck: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  deckName: string = '';
-  cardsInDeck: Carta[] = [];
-  cardCount: { [key: string]: number } = {};
+  carregandoBaralho: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  nomeDoBaralho: string = '';
+  cartasNoBaralho: Carta[] = [];
+  contadorDeCartas: { [nome: string]: number } = {};
 
-  constructor(private pokemonTcgService: PokemonTcgService, private router: Router) {
-    this.cartas = this.pokemonTcgService.getCartas();
+  constructor(private servicoPokemonTcg: PokemonTcgService, private roteador: Router) {
+    this.cartas = this.servicoPokemonTcg.getCartas();
   }
 
   ngOnInit() {
-    this.loadDeck();
+    this.carregarBaralho();
   }
 
-  loadDeck() {
-    this.isLoadingDeck.next(true);
-    // Simulando o carregamento do baralho
+  carregarBaralho() {
+    this.carregandoBaralho.next(true);
     setTimeout(() => {
-      this.isLoadingDeck.next(false);
-      // Aqui você carregaria as cartas do baralho de algum serviço ou local storage
-    }, 2000); // Simulação de delay de carregamento
+      this.carregandoBaralho.next(false);
+    }, 2000);  // Simula o atraso de carregamento
   }
 
-  addCardToDeck(carta: Carta) {
-    console.log("Adicionando carta", carta.name);
-    const count = this.cardCount[carta.name] || 0;
-    if (count < 4) {
-      this.cardsInDeck.push(carta);
-      this.cardCount[carta.name] = count + 1;
-      console.log(`Carta adicionada. Total agora: ${this.cardCount[carta.name]} de ${carta.name}`);
+  adicionarCartaAoBaralho(carta: Carta) {
+    const contagem = this.contadorDeCartas[carta.name] || 0;
+    if (contagem < 4) {
+      this.cartasNoBaralho.push(carta);
+      this.contadorDeCartas[carta.name] = contagem + 1;
     } else {
       alert('Não pode adicionar mais de 4 cartas com o mesmo nome.');
     }
   }
 
-  removeCardFromDeck(carta: Carta) {
-    const index = this.cardsInDeck.findIndex(c => c.id === carta.id);
-    if (index !== -1) {
-      this.cardsInDeck.splice(index, 1);
-      this.cardCount[carta.name]--;
-      if (this.cardCount[carta.name] === 0) {
-        delete this.cardCount[carta.name];
+  removerCartaDoBaralho(carta: Carta) {
+    const indice = this.cartasNoBaralho.findIndex(c => c.id === carta.id);
+    if (indice !== -1) {
+      this.cartasNoBaralho.splice(indice, 1);
+      this.contadorDeCartas[carta.name]--;
+      if (this.contadorDeCartas[carta.name] === 0) {
+        delete this.contadorDeCartas[carta.name];
       }
       alert(`Carta ${carta.name} removida do baralho.`);
     }
   }
 
-  canSaveDeck(): boolean {
-    console.log(`Verificando possibilidade de salvar: ${this.cardsInDeck.length} cartas`);
-    return this.cardsInDeck.length >= 24 && this.cardsInDeck.length <= 60;
+  podeSalvarBaralho(): boolean {
+    return this.cartasNoBaralho.length >= 24 && this.cartasNoBaralho.length <= 60;
   }
 
-  saveDeck() {
-    console.log("Tentando salvar o baralho com o nome:", this.deckName);
-    if (!this.deckName.trim()) {
+  salvarBaralho() {
+    if (!this.nomeDoBaralho.trim()) {
       alert('Por favor, digite um nome para o baralho.');
       return;
     }
-    if (this.canSaveDeck()) {
+    if (this.podeSalvarBaralho()) {
       const baralhos = JSON.parse(localStorage.getItem('baralhoCriadoPeloUsuario') || '{}');
-      if (baralhos[this.deckName]) {
+      if (baralhos[this.nomeDoBaralho]) {
         alert('Um baralho com esse nome já existe. Por favor, escolha um nome diferente.');
         return;
       }
 
-      baralhos[this.deckName] = {
-        cards: this.cardsInDeck,
-        count: this.cardCount
+      baralhos[this.nomeDoBaralho] = {
+        cards: this.cartasNoBaralho,
+        count: this.contadorDeCartas
       };
 
       localStorage.setItem('baralhoCriadoPeloUsuario', JSON.stringify(baralhos));
       alert('Baralho salvo com sucesso!');
-
-      console.log("Baralho salvo e resetando dados.");
-      this.resetDeck();
-      this.router.navigate(['/ver-baralhos-criados']);
+      this.resetarBaralho();
+      this.roteador.navigate(['/ver-baralhos-criados']);
     } else {
       alert('O baralho deve ter entre 24 e 60 cartas.');
     }
   }
 
-  resetDeck() {
-    this.cardsInDeck = [];
-    this.cardCount = {};
-    this.deckName = '';
+  resetarBaralho() {
+    this.cartasNoBaralho = [];
+    this.contadorDeCartas = {};
+    this.nomeDoBaralho = '';
   }
 }

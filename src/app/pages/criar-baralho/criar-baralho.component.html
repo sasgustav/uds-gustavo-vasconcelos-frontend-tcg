@@ -1,17 +1,17 @@
 <div class="criar-baralho-container">
   <div class="header-line">
-    <input [(ngModel)]="deckName" placeholder="Nome do Baralho" type="text" class="deck-name-input">
-    <button (click)="saveDeck()" [disabled]="!canSaveDeck()">Criar Baralho</button>
+    <input [(ngModel)]="nomeDoBaralho" placeholder="Nome do Baralho" type="text" class="deck-name-input">
+    <button (click)="salvarBaralho()" [disabled]="!podeSalvarBaralho()">Criar Baralho</button>
   </div>
-  <div *ngIf="cardsInDeck.length > 0" class="deck-summary">
-    <h2>Cartas no Baralho: {{ deckName || 'Novo Baralho' }}</h2>
+  <div *ngIf="cartasNoBaralho.length > 0" class="deck-summary">
+    <h2>Cartas no Baralho: {{ nomeDoBaralho || 'Novo Baralho' }}</h2>
   
-    <app-spinner *ngIf="isLoadingDeck | async"></app-spinner>
+    <app-spinner *ngIf="carregandoBaralho | async"></app-spinner>
     
-    <div *ngIf="!(isLoadingDeck | async)">
-      <div *ngFor="let card of cardsInDeck" class="summary-card">
-        <span>{{ card.name }} ({{ cardCount[card.name] }})</span>
-        <button (click)="removeCardFromDeck(card)">Remover</button>
+    <div *ngIf="!(carregandoBaralho | async)">
+      <div *ngFor="let carta of cartasNoBaralho" class="summary-card">
+        <span>{{ carta.name }} ({{ contadorDeCartas[carta.name] }})</span>
+        <button (click)="removerCartaDoBaralho(carta)">Remover</button>
       </div>
     </div>
   </div>
@@ -22,7 +22,7 @@
       <h3>{{ carta.name }}</h3>
       <p>HP: {{ carta.hp }} | Tipo: {{ carta.types.join(', ') }}</p>
       <p>Raridade: {{ carta.rarity }}</p>
-      <button class="btn-add" (click)="addCardToDeck(carta)">Adicionar ao Baralho</button>
+      <button class="btn-add" (click)="adicionarCartaAoBaralho(carta)">Adicionar ao Baralho</button>
     </div>
   </div>
 </div>
