@@ -1,7 +1,7 @@
 .navbar {
   background: #107C10;
   padding: 18px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); // Sombra mais pronunciada para profundidade
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
   ul {
     list-style-type: none;
@@ -12,28 +12,40 @@
   }
 
   li {
-    margin: 0 20px; // Aumento do espaçamento entre os itens
+    margin: 0 20px;
   }
 
   a {
     color: white;
     text-decoration: none;
-    padding: 12px 20px; // Aumento do padding para um toque mais robusto
-    border-radius: 25px; // Bordas arredondadas nos links
-    transition: background-color 0.3s, transform 0.3s; // Transição suave para hover e focus
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s, transform 0.3s;
 
-    &:hover, &:focus {
-      background-color: #1E8449; // Verde claro para efeito hover
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Sombra suave no hover
+    &:hover,
+    &:focus {
+      background-color: #1E8449;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     &:active {
-      transform: scale(0.95); // Efeito de clique mais sutil
+      transform: scale(0.95);
     }
   }
 
   .router-link-active {
-    border-bottom: 3px solid #28B463; // Destaca o link ativo com uma borda inferior em verde claro
-    background-color: #145A32; // Fundo para link ativo em verde mais escuro
+    border-bottom: 3px solid #28B463;
+    background-color: #145A32;
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    li {
+      margin: 10px 0;
+    }
   }
 }

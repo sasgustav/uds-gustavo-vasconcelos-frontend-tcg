@@ -16,7 +16,7 @@ export class CriarBaralhoComponent {
   cardCount: { [key: string]: number } = {};
 
   constructor(private pokemonTcgService: PokemonTcgService, private router: Router) {
-    this.cartas = this.pokemonTcgService.getCartas(); // Assume que esta linha carrega as cartas para o grid
+    this.cartas = this.pokemonTcgService.getCartas();
   }
 
   addCardToDeck(carta: Carta) {
@@ -37,7 +37,7 @@ export class CriarBaralhoComponent {
       this.cardsInDeck.splice(index, 1);
       this.cardCount[carta.name]--;
       if (this.cardCount[carta.name] === 0) {
-        delete this.cardCount[carta.name]; // Remove completamente se não há mais cartas desse tipo
+        delete this.cardCount[carta.name];
       }
       alert(`Carta ${carta.name} removida do baralho.`);
     }
@@ -60,23 +60,22 @@ export class CriarBaralhoComponent {
         alert('Um baralho com esse nome já existe. Por favor, escolha um nome diferente.');
         return;
       }
-  
-      // Adicionando o novo baralho ao objeto de baralhos
+
       baralhos[this.deckName] = {
         cards: this.cardsInDeck,
         count: this.cardCount
       };
-  
+
       localStorage.setItem('baralhoCriadoPeloUsuario', JSON.stringify(baralhos));
       alert('Baralho salvo com sucesso!');
-  
+
       console.log("Baralho salvo e resetando dados.");
       this.resetDeck();
       this.router.navigate(['/ver-baralhos-criados']);
     } else {
       alert('O baralho deve ter entre 24 e 60 cartas.');
     }
-  }  
+  }
 
   resetDeck() {
     this.cardsInDeck = [];
