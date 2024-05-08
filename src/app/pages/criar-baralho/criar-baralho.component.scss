@@ -8,8 +8,9 @@
     margin: 10px 0;
     padding: 8px;
     width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+    border: 0px solid #ccc;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   .deck-summary {
@@ -109,7 +110,8 @@
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
     cursor: pointer;
     transition: background-color 0.2s, box-shadow 0.2s;
 
