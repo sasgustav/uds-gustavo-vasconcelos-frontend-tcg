@@ -55,16 +55,28 @@ export class CriarBaralhoComponent {
       return;
     }
     if (this.canSaveDeck()) {
-      console.log("Salvando baralho:", this.deckName);
-      localStorage.setItem(this.deckName, JSON.stringify({ cards: this.cardsInDeck, count: this.cardCount }));
+      const baralhos = JSON.parse(localStorage.getItem('baralhoCriadoPeloUsuario') || '{}');
+      if (baralhos[this.deckName]) {
+        alert('Um baralho com esse nome já existe. Por favor, escolha um nome diferente.');
+        return;
+      }
+  
+      // Adicionando o novo baralho ao objeto de baralhos
+      baralhos[this.deckName] = {
+        cards: this.cardsInDeck,
+        count: this.cardCount
+      };
+  
+      localStorage.setItem('baralhoCriadoPeloUsuario', JSON.stringify(baralhos));
       alert('Baralho salvo com sucesso!');
+  
       console.log("Baralho salvo e resetando dados.");
       this.resetDeck();
       this.router.navigate(['/ver-baralhos-criados']);
     } else {
       alert('O baralho deve ter entre 24 e 60 cartas.');
     }
-  }
+  }  
 
   resetDeck() {
     this.cardsInDeck = [];

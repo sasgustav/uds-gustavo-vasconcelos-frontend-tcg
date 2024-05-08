@@ -16,7 +16,6 @@ export class GridCartasComponent implements OnInit {
 
   ngOnInit() {
     this.cartas = this.pokemonTcgService.getCartas();
-    this.isLoading = this.pokemonTcgService.getLoadingStatus();
   }
 
   adicionarAoBaralho(carta: Carta) {
