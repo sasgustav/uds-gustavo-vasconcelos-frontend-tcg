@@ -13,6 +13,10 @@ export class MeusBaralhosComponent implements OnInit {
   }
 
   loadBaralhos() {
-    this.baralhos = JSON.parse(localStorage.getItem('baralhos') || '[]');
+    this.baralhos = JSON.parse(localStorage.getItem('baralhoCriadoPeloUsuario') || '[]');
+  }
+
+  sumHP(cards: any[]): number {
+    return cards.reduce((acc, card) => acc + Number(card.hp), 0);
   }
 }
