@@ -1,0 +1,42 @@
+.baralhos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background-color: #0e0e10; // Cor de fundo escura típica do tema Xbox
+
+    .baralho-card {
+        background: linear-gradient(145deg, #1f1f23, #313136);
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        h3 {
+            color: #21D760; // Verde vibrante do Xbox
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+
+                img {
+                    width: 50px;
+                    height: auto;
+                    margin-right: 10px;
+                }
+
+                p {
+                    margin: 0;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+}

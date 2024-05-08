@@ -1,0 +1,11 @@
+<div class="baralhos-container">
+    <div *ngFor="let baralho of baralhos" class="baralho-card">
+        <h3>{{ baralho.nome }}</h3>
+        <ul>
+            <li *ngFor="let carta of baralho.cartas">
+                <img [src]="carta.images.small" alt="{{ carta.name }}">
+                <p>{{ carta.name }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
