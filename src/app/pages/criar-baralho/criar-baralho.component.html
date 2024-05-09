@@ -14,6 +14,7 @@
     <input [(ngModel)]="nomeDoBaralho" placeholder="Nome do Baralho" type="text" class="deck-name-input">
     <button (click)="salvarBaralho()" [disabled]="!podeSalvarBaralho()">Criar Baralho</button>
   </div>
+  <app-spinner [isLoading]="carregandoBaralho"></app-spinner>
   <div *ngIf="cartasNoBaralho.length > 0" class="deck-summary">
     <h2>Cartas no Baralho: {{ nomeDoBaralho || 'Novo Baralho' }}</h2>
     <app-spinner [isLoading]="carregandoBaralho"></app-spinner>

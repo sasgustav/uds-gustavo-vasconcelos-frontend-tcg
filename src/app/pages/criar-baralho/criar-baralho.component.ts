@@ -16,7 +16,7 @@ export class CriarBaralhoComponent implements OnInit {
   cartasNoBaralho: Carta[] = [];
   contadorDeCartas: { [nome: string]: number } = {};
 
-  constructor(private servicoPokemonTcg: PokemonTcgService, private roteador: Router) { }
+  constructor(private servicoPokemonTcg: PokemonTcgService, private roteador: Router) {}
 
   ngOnInit() {
     this.carregarBaralho();
