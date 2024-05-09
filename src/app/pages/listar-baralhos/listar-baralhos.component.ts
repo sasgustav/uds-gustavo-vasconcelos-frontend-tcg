@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 
 @Component({
