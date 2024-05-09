@@ -1,6 +1,6 @@
-import { Carta } from './../../core/models/carta';
+import { Carta } from 'src/app/models/carta.model'; 
 import { Component, OnInit } from '@angular/core';
-import { PokemonTcgService } from 'src/app/core/services/pokemon-tcg.service';
+import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service'; 
 
 @Component({
   selector: 'app-lista-cartas',
