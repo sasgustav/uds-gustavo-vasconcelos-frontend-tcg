@@ -10,11 +10,11 @@ import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 })
 export class ListaCartasComponent implements OnInit {
   cartas: Carta[] = [];
-  isLoading: boolean = false; // Inicialmente falso
+  isLoading: boolean = false;
   selectedCard?: Carta;
   showModal: boolean = false;
 
-  constructor(private pokemonTcgService: PokemonTcgService) {}
+  constructor(private pokemonTcgService: PokemonTcgService) { }
 
   ngOnInit() {
     this.carregarCartas();
@@ -23,7 +23,7 @@ export class ListaCartasComponent implements OnInit {
   carregarCartas() {
     this.isLoading = true;
     this.pokemonTcgService.getCartas()
-      .pipe(finalize(() => this.isLoading = false)) // Garante que isLoading é atualizado quando o carregamento termina
+      .pipe(finalize(() => this.isLoading = false))
       .subscribe(cartas => {
         this.cartas = cartas;
       });
@@ -35,7 +35,7 @@ export class ListaCartasComponent implements OnInit {
   }
 
   adicionarAoBaralho(carta: Carta, event: MouseEvent) {
-    event.stopPropagation(); // Interrompe a propagação para evitar abrir o modal
+    event.stopPropagation();
     let baralho: Carta[] = JSON.parse(localStorage.getItem('baralho') || '[]');
     baralho.push(carta);
     localStorage.setItem('baralho', JSON.stringify(baralho));

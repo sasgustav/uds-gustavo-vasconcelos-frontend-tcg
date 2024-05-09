@@ -16,15 +16,15 @@ export class MeusBaralhosComponent implements OnInit {
   contarTipos(cards: Carta[], tipo: string): number {
     return cards.filter(card => card.supertype === tipo).length;
   }
-  
+
   contarTiposUnicos(cards: Carta[]): number {
     const uniqueTypes = new Set(cards.flatMap(card => card.types));
     return uniqueTypes.size;
   }
-  
+
   listarTiposUnicos(cards: Carta[]): string[] {
     return Array.from(new Set(cards.flatMap(card => card.types)));
-  }  
+  }
 
   carregarBaralhos() {
     const dados = localStorage.getItem('baralhoCriadoPeloUsuario');
