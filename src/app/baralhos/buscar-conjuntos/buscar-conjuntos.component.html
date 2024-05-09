@@ -26,7 +26,7 @@
   </div>
   <div class="pagination-buttons">
     <button (click)="previousPage()" [disabled]="currentPage === 1"><i class="fas fa-arrow-left"></i> Anterior</button>
-    <span class="page-info">{{ currentPage }} / {{ totalPages }}</span>
+    <span class="page-info">página {{ currentPage }} de {{ totalPages }}</span>
     <button (click)="nextPage()"><i class="fas fa-arrow-right"></i> Próximo</button>
   </div>
 </div>
