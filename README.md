@@ -50,6 +50,7 @@ Capturas de tela das diferentes páginas do app para dar aos usuários uma prév
   ![alt text](image-2.png)
 - **Detalhes do Baralho:**
   ![alt text](image-4.png)
+  ![alt text](image-6.png)
 
 ## 🆘 Ajuda
 
