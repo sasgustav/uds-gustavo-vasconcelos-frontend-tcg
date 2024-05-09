@@ -3,7 +3,7 @@
         <button class="close" (click)="closeModal()">&times;</button>
         <div class="modal-body">
             <img class="modal-image" [src]="carta.images.large" alt="Imagem ampliada de {{ carta.name }}">
-            <div class="modal-info">                
+            <div class="modal-info">
                 <div class="type-badges">
                     <span *ngFor="let type of carta.types" class="type-badge">{{ type }}</span>
                 </div>
