@@ -1,8 +1,8 @@
+import { Carta } from '../models/carta.model';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map, finalize } from 'rxjs/operators';
-import { Carta } from '../models/carta.model';
 import { Set } from '../models/set.model';
 import { environment } from '../../environments/environment';
 
@@ -19,13 +19,19 @@ export class PokemonTcgService {
     return this.loading.asObservable();
   }
 
-  getSets(query: string): Observable<Set[]> {
-    const url = `${this.baseApiUrl}/sets?q=${query}`;
-    console.log("Chamando API em:", url);
-    return this.http.get<{ data: Set[] }>(url).pipe(
+  getSets(query: string = '', page: number = 1, pageSize: number = 250): Observable<Set[]> {
+    let params = new HttpParams();
+    if (query) {
+      params = params.append('q', query);
+    }
+    params = params.append('page', page.toString());
+    params = params.append('pageSize', pageSize.toString());
+
+    const url = `${this.baseApiUrl}/sets`;
+    return this.http.get<{ data: Set[] }>(url, { params }).pipe(
       map(response => response.data)
     );
-  }
+  }  
 
   getCartas(): Observable<Carta[]> {
     this.loading.next(true);
