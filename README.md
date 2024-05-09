@@ -59,6 +59,7 @@ Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataf
 
 - **Página Principal:** 
   ![alt text](image.png)
+  ![alt text](image-13.png)
   
 - **Criar Baralho:**
   ![alt text](image-5.png) 
@@ -78,6 +79,11 @@ Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataf
 - **Modal de Detalhes:**
   ![alt text](image-8.png)
   ![alt text](image-9.png)
+  ![alt text](image-12.png)
+
+  - **Página de Conjuntos de Cartas:**
+  ![alt text](image-10.png)
+  ![alt text](image-11.png)
 
 ## 🆘 Ajuda
 
