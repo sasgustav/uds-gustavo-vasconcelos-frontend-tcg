@@ -132,7 +132,6 @@
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-
 }
 
 .criar-baralho-container {
@@ -144,39 +143,39 @@
 
 .guia-container {
   background-color: #f3f4f6;
-  border: 2px solid #107c10; // Cor do Xbox
+  border: 2px solid #107c10;
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 80%; // Controla a largura do guia para melhor leitura
+  width: 80%;
 }
 
 .guia-container h1 {
-  color: #107c10; // Cor do Xbox
-  font-size: 24px; // Tamanho maior para o título
-  text-align: center; // Centraliza o título
+  color: #107c10;
+  font-size: 24px;
+  text-align: center;
   margin-bottom: 15px;
 }
 
 .guia-container ul {
-  list-style-type: none; // Remove os bullets
+  list-style-type: none;
   padding: 0;
 }
 
 li::before {
-  content: '✔'; // Ícone de verificação como marcador
-  color: #107c10; // Cor do Xbox
-  font-size: 20px; // Tamanho do ícone
-  margin-right: 10px; // Espaço entre o ícone e o texto
+  content: '✔';
+  color: #107c10;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
 .guia-container li {
   margin-bottom: 10px;
   line-height: 1.6;
-  color: #334155; // Cor escura para contraste
-  font-size: 16px; // Tamanho confortável para leitura
-  display: flex; // Flexbox para alinhar ícones com texto
+  color: #334155;
+  font-size: 16px;
+  display: flex;
   align-items: center;
 }
 
@@ -203,4 +202,16 @@ li::before {
 
 .btn-add:hover {
   background-color: #21d760;
+}
+
+.summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-card:last-child {
+  border-bottom: none;
 }
