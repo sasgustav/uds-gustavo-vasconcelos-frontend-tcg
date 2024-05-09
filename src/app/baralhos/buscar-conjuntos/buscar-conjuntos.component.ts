@@ -17,7 +17,7 @@ export class BuscarConjuntosComponent {
     this.loadSets();
   }
 
-  loadSets(query: string = '', page: number = 1, pageSize: number = 10): void {
+  loadSets(query: string = '', page: number = 1, pageSize: number = 24): void {
     this.conjuntos = this.pokemonTcgService.getSets(query, page, pageSize);
   }
 
