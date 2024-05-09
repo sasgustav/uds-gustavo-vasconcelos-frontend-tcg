@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { finalize } from 'rxjs/operators';
 import { Carta } from 'src/app/models/carta.model';
 import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 
@@ -9,17 +10,23 @@ import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 })
 export class ListaCartasComponent implements OnInit {
   cartas: Carta[] = [];
-  isLoading: boolean = true;
+  isLoading: boolean = false; // Inicialmente falso
   selectedCard?: Carta;
   showModal: boolean = false;
 
   constructor(private pokemonTcgService: PokemonTcgService) {}
 
   ngOnInit() {
-    this.pokemonTcgService.getCartas().subscribe(cartas => {
-      this.cartas = cartas;
-      this.isLoading = false;
-    });
+    this.carregarCartas();
+  }
+
+  carregarCartas() {
+    this.isLoading = true;
+    this.pokemonTcgService.getCartas()
+      .pipe(finalize(() => this.isLoading = false)) // Garante que isLoading é atualizado quando o carregamento termina
+      .subscribe(cartas => {
+        this.cartas = cartas;
+      });
   }
 
   abrirModalDetalhes(carta: Carta) {
@@ -27,14 +34,15 @@ export class ListaCartasComponent implements OnInit {
     this.showModal = true;
   }
 
-  adicionarAoBaralho(carta: Carta) {
+  adicionarAoBaralho(carta: Carta, event: MouseEvent) {
+    event.stopPropagation(); // Interrompe a propagação para evitar abrir o modal
     let baralho: Carta[] = JSON.parse(localStorage.getItem('baralho') || '[]');
     baralho.push(carta);
     localStorage.setItem('baralho', JSON.stringify(baralho));
-    event?.stopPropagation();
   }
 
   closeModal() {
     this.showModal = false;
+    this.selectedCard = undefined;
   }
 }

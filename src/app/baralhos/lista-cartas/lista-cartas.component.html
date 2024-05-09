@@ -1,9 +1,13 @@
 <div class="card-container">
-  <app-modal-detalhes [carta]="selectedCard" *ngIf="selectedCard && showModal"></app-modal-detalhes>
-
-  <div *ngFor="let carta of cartas" class="card" (click)="abrirModalDetalhes(carta)">
-    <img [src]="carta.images.small" alt="Imagem da carta">
-    <h3>{{ carta.name }}</h3>
-    <button (click)="adicionarAoBaralho(carta); $event.stopPropagation();">Adicionar ao Baralho</button>
+  <app-spinner [isLoading]="isLoading"></app-spinner>
+  
+  <div *ngIf="!isLoading">
+    <div *ngFor="let carta of cartas" class="card" (click)="abrirModalDetalhes(carta)">
+      <img [src]="carta.images.small" alt="Imagem da carta">
+      <h3>{{ carta.name }}</h3>
+      <button (click)="adicionarAoBaralho(carta, $event)">Adicionar ao Baralho</button>
+    </div>
   </div>
+
+  <app-modal-detalhes [carta]="selectedCard" *ngIf="selectedCard && showModal" (close)="closeModal()"></app-modal-detalhes>
 </div>

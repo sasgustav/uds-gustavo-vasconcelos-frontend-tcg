@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 import { Carta } from 'src/app/models/carta.model';
 import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 import { Router } from '@angular/router';
@@ -10,25 +10,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./criar-baralho.component.scss']
 })
 export class CriarBaralhoComponent implements OnInit {
-  cartas: Observable<Carta[]>;
-  carregandoBaralho: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  cartas: Carta[] = [];
+  carregandoBaralho: boolean = false;
   nomeDoBaralho: string = '';
   cartasNoBaralho: Carta[] = [];
   contadorDeCartas: { [nome: string]: number } = {};
 
-  constructor(private servicoPokemonTcg: PokemonTcgService, private roteador: Router) {
-    this.cartas = this.servicoPokemonTcg.getCartas();
-  }
+  constructor(private servicoPokemonTcg: PokemonTcgService, private roteador: Router) {}
 
   ngOnInit() {
     this.carregarBaralho();
   }
 
   carregarBaralho() {
-    this.carregandoBaralho.next(true);
-    setTimeout(() => {
-      this.carregandoBaralho.next(false);
-    }, 2000);  // Simula o atraso de carregamento
+    this.carregandoBaralho = true;
+    this.servicoPokemonTcg.getCartas().pipe(
+      finalize(() => this.carregandoBaralho = false)
+    ).subscribe(cartas => {
+      this.cartas = cartas;
+    });
   }
 
   adicionarCartaAoBaralho(carta: Carta) {

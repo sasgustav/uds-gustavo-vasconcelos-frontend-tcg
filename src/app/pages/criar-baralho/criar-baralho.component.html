@@ -3,7 +3,8 @@
     <h1>Como Criar Seu Baralho</h1>
     <ul>
       <li>Digite um <strong>nome para o seu baralho</strong> no campo indicado.</li>
-      <li>Adicione cartas ao baralho navegando pela lista abaixo e clicando em <strong>Adicionar ao Baralho</strong> para cada carta desejada.</li>
+      <li>Adicione cartas ao baralho navegando pela lista abaixo e clicando em <strong>Adicionar ao Baralho</strong>
+        para cada carta desejada.</li>
       <li>Você pode adicionar até <strong>4 cópias</strong> da mesma carta ao seu baralho.</li>
       <li>O baralho deve ter <strong>entre 24 e 60 cartas</strong> para ser válido.</li>
       <li>Clique em <strong>Criar Baralho</strong> uma vez que seu baralho atenda aos requisitos para salvá-lo.</li>
@@ -15,8 +16,8 @@
   </div>
   <div *ngIf="cartasNoBaralho.length > 0" class="deck-summary">
     <h2>Cartas no Baralho: {{ nomeDoBaralho || 'Novo Baralho' }}</h2>
-    <app-spinner *ngIf="carregandoBaralho | async"></app-spinner>
-    <div *ngIf="!(carregandoBaralho | async)">
+    <app-spinner [isLoading]="carregandoBaralho"></app-spinner>
+    <div *ngIf="!carregandoBaralho">
       <div *ngFor="let carta of cartasNoBaralho" class="summary-card">
         <span>{{ carta.name }} ({{ contadorDeCartas[carta.name] }})</span>
         <button (click)="removerCartaDoBaralho(carta)">Remover</button>
@@ -24,7 +25,7 @@
     </div>
   </div>
   <div class="grid-container">
-    <div *ngFor="let carta of (cartas | async)" class="card">
+    <div *ngFor="let carta of cartas" class="card">
       <img [src]="carta.images.small" alt="{{ carta.name }}">
       <h3>{{ carta.name }}</h3>
       <p>HP: {{ carta.hp }} | Tipo: {{ carta.types.join(', ') }}</p>
