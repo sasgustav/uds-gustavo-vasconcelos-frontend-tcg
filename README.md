@@ -48,7 +48,8 @@ Capturas de tela das diferentes páginas do app para dar aos usuários uma prév
   ![alt text](image-3.png)
 - **Meus Baralhos:** 
   ![alt text](image-2.png)
-- **Detalhes do Baralho:** Inserir imagem
+- **Detalhes do Baralho:**
+  ![alt text](image-4.png)
 
 ## 🆘 Ajuda
 
