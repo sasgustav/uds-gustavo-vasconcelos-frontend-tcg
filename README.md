@@ -1,27 +1,45 @@
-# PokemonTcgGame
+# Pokemon TCG Game - Gustavo Vasconcelos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Este projeto é uma aplicação web projetada para criar e gerenciar baralhos do jogo de cartas colecionáveis Pokémon. Construído com Angular e estilizado com um tema inspirado no Microsoft Xbox, a aplicação permite que os usuários naveguem pelas cartas Pokémon, adicionem-nas a baralhos personalizados e gerenciem esses baralhos.
 
-## Development server
+## 🛠️ Desenvolvedor
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Este projeto foi desenvolvido por Gustavo Vasconcelos.
 
-## Code scaffolding
+## 🚀 Servidor de desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Execute `ng serve` para iniciar o servidor de desenvolvimento. Navegue para `http://localhost:4200/`. O aplicativo recarregará automaticamente se você alterar algum dos arquivos fonte.
 
-## Build
+## 🧩 Geração de código
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Execute `ng generate component nome-do-componente` para gerar um novo componente. Você também pode gerar diretivas, pipes, serviços, classes, guards, interfaces, enums e módulos usando `ng generate`.
 
-## Running unit tests
+## 🏗️ Construção
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Execute `ng build` para construir o projeto. Os artefatos de construção serão armazenados no diretório `dist/`.
 
-## Running end-to-end tests
+## 🧪 Testes
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Testes unitários
 
-## Further help
+Execute `ng test` para realizar os testes unitários via [Karma](https://karma-runner.github.io).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Testes de ponta a ponta
+
+Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataforma de sua escolha. É necessário adicionar primeiro um pacote que implemente capacidades de testes de ponta a ponta.
+
+## 🔍 Uso
+
+1. **Navegando na Aplicação**: Inicie o servidor de desenvolvimento e navegue até `http://localhost:4200/` para ver a aplicação.
+2. **Criando Baralhos**: Utilize o recurso 'Criar Baralho' para montar novos baralhos. Digite um nome para o seu baralho e comece a adicionar cartas.
+3. **Visualizando Baralhos**: Vá para 'Meus Baralhos' para ver todos os baralhos que você criou.
+4. **Editando e Excluindo Baralhos**: Cada baralho possui opções para editar seu conteúdo ou excluí-lo completamente.
+5. **Detalhes das Cartas**: Clique em qualquer carta para ver suas informações detalhadas.
+
+## 🆘 Ajuda
+
+Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão Geral e Referência de Comandos do Angular CLI](https://angular.io/cli).
+
+---
+#### 💻 Desenvolvido por: 🐙[Gustavo Vasconcelos](https://github.com/sasgustav)
+#### 👤 LinkedIn: 🔗[Gustavo Vasconcelos](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
