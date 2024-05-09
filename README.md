@@ -68,6 +68,7 @@ Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataf
 
 - **Meus Baralhos:** 
   ![alt text](image-2.png)
+  ![alt text](image-14.png)
 
 - **Detalhes do Baralho:**
   ![alt text](image-4.png)
