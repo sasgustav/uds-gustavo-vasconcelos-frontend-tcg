@@ -40,17 +40,22 @@ Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataf
 
 Aqui você pode adicionar capturas de tela das diferentes páginas do seu aplicativo para dar aos usuários uma prévia visual das funcionalidades:
 
-- **Página Principal:** (![alt text](image.png))
-- **Criar Baralho:** 
-(![alt text](image-5.png) ![alt text](image-1.png))
-![alt text](image-3.png)
-- **Meus Baralhos:** (![alt text](image-2.png))
-- **Detalhes do Baralho:** (Inserir imagem)
+- **Página Principal:** 
+  ![alt text](image.png)
+- **Criar Baralho:**
+  ![alt text](image-5.png) 
+  ![alt text](image-1.png)
+  ![alt text] image-3.png
+- **Meus Baralhos:** 
+  ![alt text](image-2.png)
+- **Detalhes do Baralho:** Inserir imagem
 
 ## 🆘 Ajuda
 
 Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão Geral e Referência de Comandos do Angular CLI](https://angular.io/cli).
 
 ---
+
 #### 💻 Desenvolvido por: 🐙[Gustavo Vasconcelos](https://github.com/sasgustav)
+
 #### 👤 LinkedIn: 🔗[Gustavo Vasconcelos](https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/)
