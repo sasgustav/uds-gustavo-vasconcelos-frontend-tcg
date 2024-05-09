@@ -45,7 +45,7 @@ Aqui você pode adicionar capturas de tela das diferentes páginas do seu aplica
 - **Criar Baralho:**
   ![alt text](image-5.png) 
   ![alt text](image-1.png)
-  ![alt text] image-3.png
+  ![alt text](image-3.png)
 - **Meus Baralhos:** 
   ![alt text](image-2.png)
 - **Detalhes do Baralho:** Inserir imagem
