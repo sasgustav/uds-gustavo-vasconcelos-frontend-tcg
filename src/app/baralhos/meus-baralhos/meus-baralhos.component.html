@@ -1,20 +1,13 @@
 <div class="baralhos-container">
     <h1>Meus Baralhos</h1>
-    <div class="grid">
-      <div *ngFor="let baralho of baralhos" class="baralho-card">
-        <h2>{{ baralho.name }}</h2>
-        <p>Total Cartas: {{ baralho.cards.length }}</p>
-        <p>Total HP: {{ sumHP(baralho.cards) }}</p>
-        <div class="card-list">
-          <div *ngFor="let card of baralho.cards" class="card-detail">
-            <img src="{{ card.images.small }}" alt="{{ card.name }}">
-            <div class="card-info">
-              <h3>{{ card.name }}</h3>
-              <p>HP: {{ card.hp }}</p>
-              <p>Tipo: {{ card.types.join(', ') }}</p>
-            </div>
-          </div>
-        </div>
+    <div *ngFor="let baralho of baralhos" class="baralho-card">
+      <h2>{{ baralho.nome }}</h2>
+      <p>Total de Cartas: {{ baralho.cards.length }}</p>
+      <p>Total HP: {{ sumHP(baralho.cards) }}</p>
+      <div class="actions">
+        <button (click)="editarBaralho(baralho)">Editar</button>
+        <button (click)="removerBaralho(baralho.nome)">Remover</button>
+        <button (click)="verDetalhes(baralho)">Detalhes</button>
       </div>
     </div>
   </div>

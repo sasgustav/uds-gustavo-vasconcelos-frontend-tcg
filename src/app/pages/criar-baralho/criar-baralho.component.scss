@@ -136,3 +136,57 @@
   transition: background-color 0.3s ease;
 
 }
+
+.criar-baralho-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.guia-container {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.guia-container h1 {
+  color: #0056b3;
+}
+
+.guia-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.guia-container li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  color: #334155;
+}
+
+.header-line, .deck-summary, .grid-container {
+  width: 100%;
+}
+
+.deck-name-input {
+  padding: 8px;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.btn-add {
+  background-color: #107c10;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #21d760;
+}
