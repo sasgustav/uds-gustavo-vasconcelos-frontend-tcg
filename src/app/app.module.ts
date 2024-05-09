@@ -41,7 +41,7 @@ import { ListaCartasComponent } from './baralhos/lista-cartas/lista-cartas.compo
     ModalDetalhesComponent
   ],
   imports: [
-    BrowserModule,    
+    BrowserModule,
     HttpClientModule,
     CommonModule,
     FormsModule,

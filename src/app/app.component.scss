@@ -1,28 +1,28 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    font-size: 18px; 
-    line-height: 1.5;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 router-outlet,
-.main-content { 
+.main-content {
   flex: 1;
 }
 
 app-footer {
-    margin-top: auto;
-    /* Mantém o footer no rodapé */
+  margin-top: auto;
 }
 
-.main-container { /* Opcional: Para melhor organização */
-    display: flex;
-    flex-direction: column; 
-    min-height: 100vh;
-  }
+.main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

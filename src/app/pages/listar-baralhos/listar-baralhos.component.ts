@@ -22,11 +22,9 @@ export class ListarBaralhosComponent implements OnInit {
     this.pokemonTcgService.getCartas()
       .pipe(finalize(() => this.isLoading = false))
       .subscribe(data => {
-        // Processa os dados recebidos
       },
         error => {
           console.error('Erro ao carregar as cartas:', error);
-          // Opcionalmente, mostre uma mensagem de erro para o usuário
         });
   }
 
