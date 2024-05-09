@@ -1,7 +1,7 @@
-<app-spinner [isLoading]="(isLoading | async) ?? false"></app-spinner>
+<app-spinner [isLoading]="isLoading"></app-spinner>
 
-<div *ngIf="!(isLoading | async)" class="grid-container">
-  <div *ngFor="let carta of cartas | async" class="card">
+<div *ngIf="!isLoading" class="grid-container">
+  <div *ngFor="let carta of cartas" class="card">
     <img [src]="carta.images.small" alt="{{ carta.name }}">
     <h3>{{ carta.name }}</h3>
     <p>HP: {{ carta.hp }} | Tipo: {{ carta.types.join(', ') }}</p>
