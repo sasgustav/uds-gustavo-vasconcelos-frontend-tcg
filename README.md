@@ -38,7 +38,7 @@ Execute `ng e2e` para realizar os testes de ponta a ponta através de uma plataf
 
 ## 📸 Capturas de Tela
 
-Aqui você pode adicionar capturas de tela das diferentes páginas do seu aplicativo para dar aos usuários uma prévia visual das funcionalidades:
+Capturas de tela das diferentes páginas do app para dar aos usuários uma prévia visual das funcionalidades:
 
 - **Página Principal:** 
   ![alt text](image.png)
