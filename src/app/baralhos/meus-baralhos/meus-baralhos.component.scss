@@ -38,7 +38,8 @@
       margin-bottom: 10px;
     }
 
-    .baralho-info p, .card-types {
+    .baralho-info p,
+    .card-types {
       color: #666;
       font-size: 0.9rem;
       margin: 5px 0;
@@ -61,14 +62,14 @@
 
       button {
         padding: 10px 20px;
-        background-color: #107c10; // Xbox green
+        background-color: #107c10;
         color: white;
         border: none;
         border-radius: 25px;
         cursor: pointer;
 
         &:hover {
-          background-color: #21d760; // Lighter green
+          background-color: #21d760;
         }
       }
     }
