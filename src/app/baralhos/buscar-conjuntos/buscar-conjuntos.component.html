@@ -1,0 +1,10 @@
+<div class="sets-container">
+    <h1>Conjuntos de Cartas Pokémon</h1>
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Buscar conjuntos..." (keyup)="loadSets()">
+    <div *ngFor="let conjunto of conjuntos | async" class="set-card">
+        <h3>{{ conjunto.name }}</h3>
+        <p>Série: {{ conjunto.series }}</p>
+        <p>Total de Cartas: {{ conjunto.total }}</p>
+        <img [src]="conjunto.images.logo" alt="Logo do conjunto">
+    </div>
+</div>

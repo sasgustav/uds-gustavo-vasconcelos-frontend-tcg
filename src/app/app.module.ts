@@ -20,6 +20,8 @@ import { BackToTopComponent } from './shared/components/back-to-top/back-to-top.
 import { ToolbarTopComponent } from './shared/components/toolbar-top/toolbar-top.component';
 import { ModalDetalhesComponent } from './shared/components/modal-detalhes/modal-detalhes.component';
 import { ListaCartasComponent } from './baralhos/lista-cartas/lista-cartas.component';
+import { BuscarConjuntosComponent } from './baralhos/buscar-conjuntos/buscar-conjuntos.component';
+import { VerConjuntosComponent } from './pages/ver-conjuntos/ver-conjuntos.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ListaCartasComponent } from './baralhos/lista-cartas/lista-cartas.compo
     SpinnerComponent,
     BackToTopComponent,
     ToolbarTopComponent,
-    ModalDetalhesComponent
+    ModalDetalhesComponent,
+    BuscarConjuntosComponent,
+    VerConjuntosComponent
   ],
   imports: [
     BrowserModule,
