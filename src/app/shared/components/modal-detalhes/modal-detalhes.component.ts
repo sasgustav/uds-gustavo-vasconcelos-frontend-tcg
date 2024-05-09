@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Carta } from 'src/app/models/carta.model';
 
 @Component({
@@ -6,12 +6,15 @@ import { Carta } from 'src/app/models/carta.model';
   templateUrl: './modal-detalhes.component.html',
   styleUrls: ['./modal-detalhes.component.scss']
 })
-export class ModalDetalhesComponent {
+export class ModalDetalhesComponent implements OnChanges {
   @Input() carta!: Carta;
-  @Output() fechar = new EventEmitter();
   show: boolean = false;
 
-  constructor() { }
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['carta'] && this.carta) {
+      this.openModal();
+    }
+  }
 
   openModal() {
     this.show = true;
