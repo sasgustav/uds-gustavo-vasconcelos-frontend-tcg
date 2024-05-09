@@ -1,4 +1,9 @@
 {
+  "author": {
+    "name": "Gustavo Vasconcelos",
+    "email": "gustavovasconcelos.sc@gmail.com",
+    "url": "https://www.linkedin.com/in/gustavo-vasconcelos-software-engineer/" 
+  },  
   "name": "pokemon-tcg-game",
   "version": "0.0.0",
   "scripts": {
