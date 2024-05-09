@@ -10,11 +10,13 @@ export class MeusBaralhosComponent implements OnInit {
 
   ngOnInit() {
     this.carregarBaralhos();
-  }
+    console.log(this.baralhos);
+  }  
 
   carregarBaralhos() {
     this.baralhos = JSON.parse(localStorage.getItem('baralhoCriadoPeloUsuario') || '[]');
-  }
+    console.log(this.baralhos);
+  }  
 
   sumHP(cards: any[]): number {
     return cards.reduce((total, card) => total + Number(card.hp), 0);
