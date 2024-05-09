@@ -1,17 +1,22 @@
 <div class="sets-container">
+  <div class="search-header">
     <h1>Conjuntos de Cartas Pokémon</h1>
-    <input type="text" [(ngModel)]="searchQuery" placeholder="Buscar conjuntos..." (keyup.enter)="applyFilter()">
-    <button (click)="applyFilter()">Buscar</button>
-    <button (click)="clearFilter()">Limpar Filtro</button>
-    <div *ngFor="let conjunto of conjuntos | async" class="set-card">
-      <h3>{{ conjunto.name }}</h3>
-      <img [src]="conjunto.images.logo" alt="Logo do conjunto {{ conjunto.name }}">
-      <p>Série: {{ conjunto.series }}</p>
-      <p>Total de Cartas: {{ conjunto.total }}</p>
-      <p>Data de Lançamento: {{ conjunto.releaseDate | date }}</p>
-      <p>Legalidades: <span *ngFor="let legality of conjunto.legalities | keyvalue">{{ legality.key }}: {{ legality.value }}</span></p>
-    </div>
-    <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
-    <button (click)="nextPage()">Próximo</button>
+      <input type="text" [(ngModel)]="searchQuery" placeholder="Buscar conjuntos..." (keyup.enter)="applyFilter()">
+      <button (click)="applyFilter()">Buscar</button>
+      <button (click)="clearFilter()">Limpar Filtro</button>
   </div>
-  
+  <div class="cards-grid">
+      <div *ngFor="let conjunto of conjuntos | async" class="set-card">
+          <h3>{{ conjunto.name }}</h3>
+          <img [src]="conjunto.images.logo" alt="Logo do conjunto {{ conjunto.name }}">
+          <p>Série: {{ conjunto.series }}</p>
+          <p>Total de Cartas: {{ conjunto.total }}</p>
+          <p>Data de Lançamento: {{ conjunto.releaseDate | date }}</p>
+          <p>Legalidades: <span *ngFor="let legality of conjunto.legalities | keyvalue">{{ legality.key }}: {{ legality.value }}</span></p>
+      </div>
+  </div>
+  <div class="pagination-buttons">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Anterior</button>
+      <button (click)="nextPage()">Próximo</button>
+  </div>
+</div>
