@@ -1,21 +1,75 @@
 <div class="modal" *ngIf="show">
     <div class="modal-content">
-        <span class="close" (click)="closeModal()">&times;</span>
-        <img [src]="carta.images.large" alt="Large image of {{ carta.name }}" style="width: 100%; border-radius: 5px; margin-bottom: 20px;">
-        <table class="table-details">
-            <tr><th>Supertype</th><td>{{ carta.supertype }}</td></tr>
-            <tr><th>Subtypes</th><td>{{ carta.subtypes.join(', ') }}</td></tr>
-            <tr><th>Level</th><td>{{ carta.level }}</td></tr>
-            <tr><th>HP</th><td>{{ carta.hp }}</td></tr>
-            <tr><th>Types</th><td>{{ carta.types.join(', ') }}</td></tr>
-            <tr><th>Evolves From</th><td>{{ carta.evolvesFrom }}</td></tr>
-            <tr><th>Abilities</th><td><div *ngFor="let ability of carta.abilities">{{ ability.name }}: {{ ability.text }}</div></td></tr>
-            <tr><th>Attacks</th><td><div *ngFor="let attack of carta.attacks">{{ attack.name }} - Cost: {{ attack.cost.join(', ') }}, Damage: {{ attack.damage }}, Text: {{ attack.text }}</div></td></tr>
-            <tr><th>Weaknesses</th><td><span *ngFor="let weakness of carta.weaknesses">{{ weakness.type }} {{ weakness.value }}</span></td></tr>
-            <tr><th>Resistances</th><td><span *ngFor="let resistance of carta.resistances">{{ resistance.type }} {{ resistance.value }}</span></td></tr>
-            <tr><th>Artist</th><td>{{ carta.artist }}</td></tr>
-            <tr><th>Rarity</th><td>{{ carta.rarity }}</td></tr>
-            <tr><th>Flavor Text</th><td>{{ carta.flavorText }}</td></tr>
-        </table>
+        <button class="close" (click)="closeModal()">&times;</button>
+        <div class="modal-body">
+            <img class="modal-image" [src]="carta.images.large" alt="Imagem ampliada de {{ carta.name }}">
+            <div class="modal-info">
+                <h2>{{ carta.name }}</h2>
+                <div class="type-badges">
+                    <span *ngFor="let type of carta.types" class="type-badge">{{ type }}</span>
+                </div>
+                <table class="table-details">
+                    <tbody>
+                        <tr>
+                            <th>Supertype</th>
+                            <td>{{ carta.supertype }}</td>
+                        </tr>
+                        <tr>
+                            <th>Subtypes</th>
+                            <td>{{ carta.subtypes.join(', ') }}</td>
+                        </tr>
+                        <tr>
+                            <th>Level</th>
+                            <td>{{ carta.level }}</td>
+                        </tr>
+                        <tr>
+                            <th>HP</th>
+                            <td>{{ carta.hp }}</td>
+                        </tr>
+                        <tr>
+                            <th>Evolves From</th>
+                            <td>{{ carta.evolvesFrom }}</td>
+                        </tr>
+                        <tr>
+                            <th>Abilities</th>
+                            <td>
+                                <div *ngFor="let ability of carta.abilities">{{ ability.name }}: {{ ability.text }}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Attacks</th>
+                            <td>
+                                <div *ngFor="let attack of carta.attacks">{{ attack.name }} - Cost: {{
+                                    attack.cost.join(', ') }}, Damage: {{ attack.damage }}, Text: {{ attack.text }}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Weaknesses</th>
+                            <td><span *ngFor="let weakness of carta.weaknesses">{{ weakness.type }} {{ weakness.value
+                                    }}</span></td>
+                        </tr>
+                        <tr>
+                            <th>Resistances</th>
+                            <td><span *ngFor="let resistance of carta.resistances">{{ resistance.type }} {{
+                                    resistance.value }}</span></td>
+                        </tr>
+                        <tr>
+                            <th>Artist</th>
+                            <td>{{ carta.artist }}</td>
+                        </tr>
+                        <tr>
+                            <th>Rarity</th>
+                            <td>{{ carta.rarity }}</td>
+                        </tr>
+                        <tr>
+                            <th>Flavor Text</th>
+                            <td>{{ carta.flavorText }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
