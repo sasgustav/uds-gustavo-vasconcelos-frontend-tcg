@@ -112,12 +112,10 @@
     border: none;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
-    cursor: pointer;
     transition: background-color 0.2s, box-shadow 0.2s;
 
     &:hover {
       background-color: #0056b3;
-      box-shadow: 0 0 10px #0056b3;
     }
 
     &:disabled {
