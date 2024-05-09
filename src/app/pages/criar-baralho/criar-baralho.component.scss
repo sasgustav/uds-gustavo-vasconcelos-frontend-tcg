@@ -144,29 +144,45 @@
 
 .guia-container {
   background-color: #f3f4f6;
-  border: 1px solid #d1d5db;
+  border: 2px solid #107c10; // Cor do Xbox
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%; // Controla a largura do guia para melhor leitura
 }
 
 .guia-container h1 {
-  color: #0056b3;
+  color: #107c10; // Cor do Xbox
+  font-size: 24px; // Tamanho maior para o título
+  text-align: center; // Centraliza o título
+  margin-bottom: 15px;
 }
 
 .guia-container ul {
-  list-style-type: none;
+  list-style-type: none; // Remove os bullets
   padding: 0;
+}
+
+li::before {
+  content: '✔'; // Ícone de verificação como marcador
+  color: #107c10; // Cor do Xbox
+  font-size: 20px; // Tamanho do ícone
+  margin-right: 10px; // Espaço entre o ícone e o texto
 }
 
 .guia-container li {
   margin-bottom: 10px;
   line-height: 1.6;
-  color: #334155;
+  color: #334155; // Cor escura para contraste
+  font-size: 16px; // Tamanho confortável para leitura
+  display: flex; // Flexbox para alinhar ícones com texto
+  align-items: center;
 }
 
-.header-line, .deck-summary, .grid-container {
+.header-line,
+.deck-summary,
+.grid-container {
   width: 100%;
 }
 
