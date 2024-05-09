@@ -1,7 +1,6 @@
 <div class="modal" *ngIf="show">
     <div class="modal-content">
         <span class="close" (click)="closeModal()">&times;</span>
-        <h2>{{ carta.name }}</h2>
         <img [src]="carta.images.large" alt="Large image of {{ carta.name }}" style="width: 100%; border-radius: 5px; margin-bottom: 20px;">
         <table class="table-details">
             <tr><th>Supertype</th><td>{{ carta.supertype }}</td></tr>
