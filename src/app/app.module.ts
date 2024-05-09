@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MeusBaralhosComponent } from './baralhos/meus-baralhos/meus-baralhos.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { BackToTopComponent } from './shared/components/back-to-top/back-to-top.component';
+import { ToolbarTopComponent } from './shared/components/toolbar-top/toolbar-top.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BackToTopComponent } from './shared/components/back-to-top/back-to-top.
     GridCartasComponent,
     MeusBaralhosComponent,
     SpinnerComponent,
-    BackToTopComponent
+    BackToTopComponent,
+    ToolbarTopComponent
   ],
   imports: [
     BrowserModule,

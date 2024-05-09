@@ -1,4 +1,5 @@
 <div class="container">
+    <app-toolbar-top *ngIf="mostrarMenu"></app-toolbar-top>
     <app-menu-navegacao *ngIf="mostrarMenu"></app-menu-navegacao>
     <div class="main-content">
         <router-outlet></router-outlet>

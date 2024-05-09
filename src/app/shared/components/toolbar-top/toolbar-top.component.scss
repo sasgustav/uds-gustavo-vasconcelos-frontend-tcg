@@ -1,0 +1,45 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1A1A1A;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    h1 {
+        flex-grow: 1;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        font-size: 24px;
+    }
+
+    img.pokemon-image {
+        width: 162px;
+    }
+
+    .toolbar-right {
+        display: flex;
+        align-items: center;
+
+        .social-links {
+            display: flex;
+            align-items: center;
+
+            a {
+                color: white;
+                font-size: 24px;
+                margin-right: 20px;
+
+                &:hover {
+                    color: #21d760;
+                }
+            }
+        }
+
+        .pokemon-image {
+            height: 50px;
+        }
+    }
+}
