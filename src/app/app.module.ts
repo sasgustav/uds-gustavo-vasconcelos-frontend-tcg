@@ -24,13 +24,12 @@ import { ListaCartasComponent } from './baralhos/lista-cartas/lista-cartas.compo
 @NgModule({
   declarations: [
     AppComponent,
-    BackToTopComponent,
     ListaCartasComponent,
     PaginaEntradaComponent,
     MenuNavegacaoComponent,
     CriarBaralhoComponent,
     ListarCartasComponent,
-    ListarBaralhosComponent,
+    ListarBaralhosComponent,    
     VerBaralhosCriadosComponent,
     FooterComponent,
     GridCartasComponent,
