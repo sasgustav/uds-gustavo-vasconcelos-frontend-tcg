@@ -12,6 +12,7 @@ export class BuscarConjuntosComponent {
   conjuntos!: Observable<Set[]>;
   searchQuery: string = '';
   currentPage: number = 1;
+  totalPages: any;
 
   constructor(private pokemonTcgService: PokemonTcgService) {
     this.loadSets();
