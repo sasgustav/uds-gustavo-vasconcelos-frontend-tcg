@@ -42,21 +42,26 @@ Capturas de tela das diferentes páginas do app para dar aos usuários uma prév
 
 - **Página Principal:** 
   ![alt text](image.png)
+  
 - **Criar Baralho:**
   ![alt text](image-5.png) 
   ![alt text](image-1.png)
   ![alt text](image-3.png)
+
 - **Meus Baralhos:** 
   ![alt text](image-2.png)
+
 - **Detalhes do Baralho:**
   ![alt text](image-4.png)
   ![alt text](image-6.png)
+
 - **Listar Cartas:**
   ![alt text](image-7.png)
+
 - **Modal de Detalhes:**
   ![alt text](image-8.png)
   ![alt text](image-9.png)
-  
+
 ## 🆘 Ajuda
 
 Para obter mais ajuda sobre o Angular CLI, use `ng help` ou confira a página [Visão Geral e Referência de Comandos do Angular CLI](https://angular.io/cli).
