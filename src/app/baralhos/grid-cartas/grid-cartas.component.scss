@@ -1,39 +1,38 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 20px;
-  }
-  
-  .card {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-  
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-  
-    h3 {
-      color: #333;
-    }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
   }
 
-  .btn-add {
-    padding: 10px 20px;
-    background-color: #107c10;
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  
-    &:hover {
-      background-color: #21d760;
-    }
+  h3 {
+    color: #333;
   }
-  
+}
+
+.btn-add {
+  padding: 10px 20px;
+  background-color: #107c10;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #21d760;
+  }
+}

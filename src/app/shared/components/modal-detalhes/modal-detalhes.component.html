@@ -1,28 +1,28 @@
-<!-- modal-detalhes.component.html -->
 <div class="modal" *ngIf="show">
     <div class="modal-content">
-      <span class="close" (click)="closeModal()">&times;</span>
-      <img [src]="carta.images.large" alt="Large image of {{ carta.name }}">
-      <h2>{{ carta.name }}</h2>
-      <p>Supertype: {{ carta.supertype }}</p>
-      <p>Subtypes: {{ carta.subtypes.join(', ') }}</p>
-      <p>Level: {{ carta.level }}</p>
-      <p>HP: {{ carta.hp }}</p>
-      <p>Types: {{ carta.types.join(', ') }}</p>
-      <p>Evolves From: {{ carta.evolvesFrom }}</p>
-      <div *ngFor="let ability of carta.abilities">
-        <h4>{{ ability.name }}</h4>
-        <p>{{ ability.text }}</p>
-      </div>
-      <div *ngFor="let attack of carta.attacks">
-        <h4>{{ attack.name }}</h4>
-        <p>Cost: {{ attack.cost.join(', ') }} - Damage: {{ attack.damage }} - Text: {{ attack.text }}</p>
-      </div>
-      <p>Weaknesses: <span *ngFor="let weakness of carta.weaknesses">{{ weakness.type }} {{ weakness.value }}</span></p>
-      <p>Resistances: <span *ngFor="let resistance of carta.resistances">{{ resistance.type }} {{ resistance.value }}</span></p>
-      <p>Artist: {{ carta.artist }}</p>
-      <p>Rarity: {{ carta.rarity }}</p>
-      <p>Flavor Text: {{ carta.flavorText }}</p>
+        <span class="close" (click)="closeModal()">&times;</span>
+        <img [src]="carta.images.large" alt="Large image of {{ carta.name }}">
+        <h2>{{ carta.name }}</h2>
+        <p>Supertype: {{ carta.supertype }}</p>
+        <p>Subtypes: {{ carta.subtypes.join(', ') }}</p>
+        <p>Level: {{ carta.level }}</p>
+        <p>HP: {{ carta.hp }}</p>
+        <p>Types: {{ carta.types.join(', ') }}</p>
+        <p>Evolves From: {{ carta.evolvesFrom }}</p>
+        <div *ngFor="let ability of carta.abilities">
+            <h4>{{ ability.name }}</h4>
+            <p>{{ ability.text }}</p>
+        </div>
+        <div *ngFor="let attack of carta.attacks">
+            <h4>{{ attack.name }}</h4>
+            <p>Cost: {{ attack.cost.join(', ') }} - Damage: {{ attack.damage }} - Text: {{ attack.text }}</p>
+        </div>
+        <p>Weaknesses: <span *ngFor="let weakness of carta.weaknesses">{{ weakness.type }} {{ weakness.value }}</span>
+        </p>
+        <p>Resistances: <span *ngFor="let resistance of carta.resistances">{{ resistance.type }} {{ resistance.value
+                }}</span></p>
+        <p>Artist: {{ carta.artist }}</p>
+        <p>Rarity: {{ carta.rarity }}</p>
+        <p>Flavor Text: {{ carta.flavorText }}</p>
     </div>
-  </div>
-  
+</div>

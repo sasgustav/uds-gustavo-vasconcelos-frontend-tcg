@@ -21,12 +21,14 @@ export class GridCartasComponent implements OnInit {
   }
 
   abrirModalDetalhes(carta: Carta) {
+    console.log("Opening modal for card:", carta);
     this.cartaSelecionada = carta;
     this.modalVisivel = true;
   }
-
+  
   fecharModal() {
+    console.log("Closing modal");
     this.modalVisivel = false;
     this.cartaSelecionada = undefined;
-  }
+  }  
 }
