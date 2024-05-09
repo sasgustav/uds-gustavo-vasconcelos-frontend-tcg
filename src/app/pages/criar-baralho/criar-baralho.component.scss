@@ -215,3 +215,30 @@ li::before {
 .summary-card:last-child {
   border-bottom: none;
 }
+
+// Media query for smartphones
+@media (max-width: 767px) {
+  .criar-baralho-container {
+    padding: 10px;
+  }
+
+  .deck-name-input {
+    width: 100%;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .card {
+    padding: 5px;
+  }
+
+  .btn-add {
+    padding: 8px 16px;
+  }
+
+  button {
+    padding: 6px 12px;
+  }
+}

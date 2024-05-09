@@ -3,6 +3,12 @@
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 10px;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 5px;
+    padding: 10px;
+  }
 }
 
 .card {
@@ -31,6 +37,12 @@
   border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.2s;
+
+  @media (max-width: 768px) {
+    margin: 0.5rem;
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
 }
 
 .btn-add:hover {
