@@ -1,8 +1,9 @@
 <div class="card-container">
-    <div *ngFor="let carta of cartas" class="card">
-      <img [src]="carta.images?.small" alt="Imagem da carta">
-      <h3>{{ carta.nome }}</h3>
-      <button (click)="adicionarAoBaralho(carta)">Adicionar ao Baralho</button>
-    </div>
+  <app-modal-detalhes [carta]="selectedCard" *ngIf="selectedCard && showModal"></app-modal-detalhes>
+
+  <div *ngFor="let carta of cartas" class="card" (click)="abrirModalDetalhes(carta)">
+    <img [src]="carta.images?.small" alt="Imagem da carta">
+    <h3>{{ carta.name }}</h3>
+    <button (click)="adicionarAoBaralho(carta); $event.stopPropagation();">Adicionar ao Baralho</button>
   </div>
-  
+</div>

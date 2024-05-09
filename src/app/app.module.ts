@@ -18,11 +18,14 @@ import { MeusBaralhosComponent } from './baralhos/meus-baralhos/meus-baralhos.co
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
 import { BackToTopComponent } from './shared/components/back-to-top/back-to-top.component';
 import { ToolbarTopComponent } from './shared/components/toolbar-top/toolbar-top.component';
+import { ModalDetalhesComponent } from './shared/components/modal-detalhes/modal-detalhes.component';
+import { ListaCartasComponent } from './baralhos/lista-cartas/lista-cartas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BackToTopComponent,
+    ListaCartasComponent,
     PaginaEntradaComponent,
     MenuNavegacaoComponent,
     CriarBaralhoComponent,
@@ -34,10 +37,11 @@ import { ToolbarTopComponent } from './shared/components/toolbar-top/toolbar-top
     MeusBaralhosComponent,
     SpinnerComponent,
     BackToTopComponent,
-    ToolbarTopComponent
+    ToolbarTopComponent,
+    ModalDetalhesComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,    
     HttpClientModule,
     CommonModule,
     FormsModule,

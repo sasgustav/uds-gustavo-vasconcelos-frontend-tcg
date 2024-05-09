@@ -1,6 +1,6 @@
-import { Carta } from 'src/app/models/carta.model'; 
 import { Component, OnInit } from '@angular/core';
-import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service'; 
+import { Carta } from 'src/app/models/carta.model';
+import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 
 @Component({
   selector: 'app-lista-cartas',
@@ -9,18 +9,32 @@ import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 })
 export class ListaCartasComponent implements OnInit {
   cartas: Carta[] = [];
+  isLoading: boolean = true;
+  selectedCard?: Carta;
+  showModal: boolean = false;
 
   constructor(private pokemonTcgService: PokemonTcgService) {}
 
   ngOnInit() {
     this.pokemonTcgService.getCartas().subscribe(cartas => {
       this.cartas = cartas;
+      this.isLoading = false;
     });
+  }
+
+  abrirModalDetalhes(carta: Carta) {
+    this.selectedCard = carta;
+    this.showModal = true;
   }
 
   adicionarAoBaralho(carta: Carta) {
     let baralho: Carta[] = JSON.parse(localStorage.getItem('baralho') || '[]');
     baralho.push(carta);
     localStorage.setItem('baralho', JSON.stringify(baralho));
+    event?.stopPropagation();
+  }
+
+  closeModal() {
+    this.showModal = false;
   }
 }
