@@ -19,11 +19,4 @@ export class AppComponent {
       this.mostrarMenu = !event.urlAfterRedirects.includes('/entrada');
     });
   }
-
-  loadData() {
-    this.dataLoading = true;
-    setTimeout(() => {
-      this.dataLoading = false;
-    }, 3000);
-  }
 }

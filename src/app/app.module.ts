@@ -29,7 +29,7 @@ import { ListaCartasComponent } from './baralhos/lista-cartas/lista-cartas.compo
     MenuNavegacaoComponent,
     CriarBaralhoComponent,
     ListarCartasComponent,
-    ListarBaralhosComponent,    
+    ListarBaralhosComponent,
     VerBaralhosCriadosComponent,
     FooterComponent,
     GridCartasComponent,
