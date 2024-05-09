@@ -7,7 +7,7 @@
 
   h1 {
     color: #107c10;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 20px;
   }
@@ -15,21 +15,22 @@
   .baralho-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
     width: 100%;
   }
 
   .baralho-card {
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    margin: 10px;
-    width: calc(50% - 20px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 
     &:hover {
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     }
 
     h2 {
@@ -37,9 +38,20 @@
       margin-bottom: 10px;
     }
 
-    p {
+    .baralho-info p, .card-types {
       color: #666;
       font-size: 0.9rem;
+      margin: 5px 0;
+    }
+
+    .type-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      margin-right: 5px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      font-size: 0.75rem;
     }
 
     .actions {
@@ -49,15 +61,14 @@
 
       button {
         padding: 10px 20px;
-        background-color: #007bff; 
+        background-color: #107c10; // Xbox green
         color: white;
         border: none;
-        border-radius: 5px;
+        border-radius: 25px;
         cursor: pointer;
-        transition: background-color 0.2s;
 
         &:hover {
-          background-color: #0056b3; 
+          background-color: #21d760; // Lighter green
         }
       }
     }
@@ -69,14 +80,4 @@
     font-size: 1.2rem;
     margin-top: 20px;
   }
-}
-
-.type-badge {
-  display: inline-block;
-  padding: 2px 8px;
-  margin: 2px;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  font-size: 0.75rem;
 }
