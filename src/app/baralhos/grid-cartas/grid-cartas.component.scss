@@ -24,15 +24,14 @@
 }
 
 .btn-add {
-  padding: 10px 20px;
-  background-color: #107c10;
+  background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 25px;
+  padding: 10px 20px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s;
+}
 
-  &:hover {
-    background-color: #21d760;
-  }
+.btn-add:hover {
+  background-color: #0056b3;
 }
