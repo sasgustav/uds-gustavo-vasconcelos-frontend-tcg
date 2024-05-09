@@ -2,13 +2,12 @@
     <h1>Meus Baralhos</h1>
     <div *ngIf="baralhos.length > 0">
         <div *ngFor="let baralho of baralhos; let i = index" class="baralho-card">
-        <h2>{{ baralho.name }}</h2>
-        {{ baralhos | json }}
+        <h2>{{ baralho.nome || baralho.name }}</h2>
         <p>Total de Cartas: {{ baralho.cards.length }}</p>
         <p>Total HP: {{ sumHP(baralho.cards) }}</p>
         <div class="actions">
           <button (click)="editarBaralho(baralho)">Editar</button>
-          <button (click)="removerBaralho(baralho.name)">Remover</button>
+          <button (click)="removerBaralho(baralho.nome || baralho.name)">Remover</button>
           <button (click)="verDetalhes(baralho)">Detalhes</button>
         </div>
       </div>
@@ -16,5 +15,4 @@
     <div *ngIf="baralhos.length === 0" class="no-baralhos">
         Nenhum baralho encontrado.
     </div>    
-  </div>
-  
+</div>
