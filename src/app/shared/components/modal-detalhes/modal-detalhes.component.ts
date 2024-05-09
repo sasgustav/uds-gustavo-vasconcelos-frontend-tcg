@@ -7,7 +7,7 @@ import { Carta } from 'src/app/models/carta.model';
   styleUrls: ['./modal-detalhes.component.scss']
 })
 export class ModalDetalhesComponent {
-  @Input() carta?: Carta;
+  @Input() carta!: Carta;
   show: boolean = false;
 
   constructor() { }
@@ -19,5 +19,4 @@ export class ModalDetalhesComponent {
   closeModal() {
     this.show = false;
   }
-
 }

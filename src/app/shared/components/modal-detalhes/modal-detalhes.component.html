@@ -1,12 +1,12 @@
 <div class="modal" *ngIf="show">
     <div class="modal-content">
         <span class="close" (click)="closeModal()">&times;</span>
-        <h2>{{ carta?.name }}</h2>
-        <img [src]="carta?.images?.large" alt="Imagem da carta">
-        <p>HP: {{ carta?.hp }}</p>
-        <p>Tipo: {{ carta?.types?.join(', ') }}</p>
-        <p>Subtipo: {{ carta?.subtypes?.join(', ') }}</p>
-        <p>Artista: {{ carta?.artist }}</p>
-        <p>Raridade: {{ carta?.rarity }}</p>
+        <h2>{{ carta.name }}</h2>
+        <img [src]="carta.images.large" alt="Imagem da carta">
+        <p>HP: {{ carta.hp }}</p>
+        <p>Tipo: {{ carta.types.join(', ') }}</p>
+        <p>Subtipo: {{ carta.subtypes.join(', ') }}</p>
+        <p>Artista: {{ carta.artist }}</p>
+        <p>Raridade: {{ carta.rarity }}</p>
     </div>
 </div>

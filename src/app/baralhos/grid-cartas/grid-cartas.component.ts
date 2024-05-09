@@ -1,6 +1,7 @@
+// grid-cartas.component.ts
+import { Carta } from 'src/app/models/carta.model';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Carta } from 'src/app/models/carta.model';
 import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 
 @Component({
@@ -11,6 +12,8 @@ import { PokemonTcgService } from 'src/app/services/pokemon-tcg.service';
 export class GridCartasComponent implements OnInit {
   cartas!: Observable<Carta[]>;
   isLoading!: Observable<boolean>;
+  modalVisivel: boolean = false;
+  cartaSelecionada?: Carta;
 
   constructor(private pokemonTcgService: PokemonTcgService) {}
 
@@ -27,5 +30,14 @@ export class GridCartasComponent implements OnInit {
     baralho.push(carta);
     localStorage.setItem('baralho', JSON.stringify(baralho));
     alert('Carta adicionada ao baralho!');
+  }
+
+  abrirModalDetalhes(carta: Carta) {
+    this.cartaSelecionada = carta;
+    this.modalVisivel = true;
+  }
+
+  fecharModal() {
+    this.modalVisivel = false;
   }
 }
