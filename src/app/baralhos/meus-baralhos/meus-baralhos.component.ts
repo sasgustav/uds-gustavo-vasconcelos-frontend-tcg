@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Carta } from 'src/app/models/carta.model';
 
 @Component({
   selector: 'app-meus-baralhos',
@@ -11,6 +12,19 @@ export class MeusBaralhosComponent implements OnInit {
   ngOnInit() {
     this.carregarBaralhos();
   }
+
+  contarTipos(cards: Carta[], tipo: string): number {
+    return cards.filter(card => card.supertype === tipo).length;
+  }
+  
+  contarTiposUnicos(cards: Carta[]): number {
+    const uniqueTypes = new Set(cards.flatMap(card => card.types));
+    return uniqueTypes.size;
+  }
+  
+  listarTiposUnicos(cards: Carta[]): string[] {
+    return Array.from(new Set(cards.flatMap(card => card.types)));
+  }  
 
   carregarBaralhos() {
     const dados = localStorage.getItem('baralhoCriadoPeloUsuario');

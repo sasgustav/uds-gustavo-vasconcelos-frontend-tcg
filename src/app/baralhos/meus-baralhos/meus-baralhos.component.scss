@@ -6,7 +6,9 @@
   width: 100%;
 
   h1 {
-    color: #107c10; // Verde Xbox
+    color: #107c10;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 20px;
   }
 
@@ -23,21 +25,21 @@
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
-    width: calc(50% - 20px); // Calcula a largura para duas colunas com espaço
+    width: calc(50% - 20px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
     &:hover {
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); // Sombra mais destacada no hover
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); 
     }
 
     h2 {
       color: #333;
-      margin-bottom: 10px; // Espaço abaixo do título do baralho
+      margin-bottom: 10px;
     }
 
     p {
       color: #666;
-      font-size: 0.9rem; // Tamanho um pouco menor para os parágrafos
+      font-size: 0.9rem;
     }
 
     .actions {
@@ -47,7 +49,7 @@
 
       button {
         padding: 10px 20px;
-        background-color: #007bff; // Azul Xbox
+        background-color: #007bff; 
         color: white;
         border: none;
         border-radius: 5px;
@@ -55,7 +57,7 @@
         transition: background-color 0.2s;
 
         &:hover {
-          background-color: #0056b3; // Azul mais escuro para hover
+          background-color: #0056b3; 
         }
       }
     }
@@ -67,4 +69,14 @@
     font-size: 1.2rem;
     margin-top: 20px;
   }
+}
+
+.type-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  margin: 2px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-size: 0.75rem;
 }
