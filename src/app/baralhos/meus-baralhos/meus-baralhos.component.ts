@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Carta } from 'src/app/models/carta.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-meus-baralhos',
@@ -35,7 +36,11 @@ export class MeusBaralhosComponent implements OnInit {
         ...objetosBaralhos[key]
       }));
     } else {
-      console.log('Nenhum dado encontrado no localStorage.');
+      Swal.fire({
+        title: 'Nenhum baralho encontrado',
+        text: 'Você ainda não salvou nenhum baralho.',
+        icon: 'info'
+      });
     }
   }
 
@@ -48,14 +53,25 @@ export class MeusBaralhosComponent implements OnInit {
   }
 
   removerBaralho(nomeDoBaralho: string) {
-    if (confirm(`Tem certeza que deseja remover o baralho '${nomeDoBaralho}'?`)) {
-      this.baralhos = this.baralhos.filter(baralho => baralho.nome !== nomeDoBaralho);
-      localStorage.setItem('baralhoCriadoPeloUsuario', JSON.stringify(this.baralhos.reduce((acc, curr) => {
-        acc[curr.nome] = { cards: curr.cards };
-        return acc;
-      }, {})));
-      alert('Baralho removido com sucesso.');
-    }
+    Swal.fire({
+      title: 'Remover Baralho',
+      text: `Tem certeza que deseja remover o baralho '${nomeDoBaralho}'?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, remover',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.baralhos = this.baralhos.filter(baralho => baralho.nome !== nomeDoBaralho);
+        localStorage.setItem('baralhoCriadoPeloUsuario', JSON.stringify(this.baralhos.reduce((acc, curr) => {
+          acc[curr.nome] = { cards: curr.cards };
+          return acc;
+        }, {})));
+        Swal.fire('Baralho removido!', `O baralho '${nomeDoBaralho}' foi removido com sucesso.`, 'success');
+      }
+    });
   }
 
   verDetalhes(baralho: any) {
